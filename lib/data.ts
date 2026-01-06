@@ -46,7 +46,7 @@ const data = {
       title: "Most popular wallet pouch for sale",
       buttonCaption: "shop now",
       image: "/images/banner2.png",
-      url: "search?category=T-wallets",
+      url: "search?category=wallets",
       isPublished: true,
     },
   ],

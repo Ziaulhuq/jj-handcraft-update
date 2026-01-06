@@ -48,10 +48,10 @@ export function HomeCarousel({
                   className="object-cover"
                   priority
                 />
-                <div className="absolute w-1/3 left-16 md:left-32 top-1/2 transform -translate-y-1/2">
+                <div className="absolute w-1/3 left-16 md:left-30 top-1/2 transform -translate-y-1/2">
                   <h2
                     className={cn(
-                      "text-xl md:text-6xl font-bold mb-4 text-primary"
+                      "text-xl md:text-5xl font-extrabold text-primary"
                     )}
                   >
                     {item.title}
