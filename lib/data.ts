@@ -38,14 +38,14 @@ const data = {
     {
       title: "Most popular side bag for sale",
       buttonCaption: "shop now",
-      image: "/images/banner2.png",
+      image: "/images/banner1.png",
       url: "search?category=T-Shirts",
       isPublished: true,
     },
     {
       title: "Most popular wallet pouch for sale",
       buttonCaption: "shop now",
-      image: "/images/banner1.png",
+      image: "/images/banner2.png",
       url: "search?category=T-Shirts",
       isPublished: true,
     },
