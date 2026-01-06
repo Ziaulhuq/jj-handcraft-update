@@ -33,6 +33,23 @@ const data = {
       href: "/page/help",
     },
   ],
+
+  carousels: [
+    {
+      title: "Most popular side bag for sale",
+      buttonCaption: "shop now",
+      image: "/images/banner1.png",
+      url: "search?category=T-Shirts",
+      isPublished: true,
+    },
+    {
+      title: "Most popular wallet puch for sale",
+      buttonCaption: "shop now",
+      image: "/images/banner2.png",
+      url: "search?category=T-wallets",
+      isPublished: true,
+    },
+  ],
 };
 
 export default data;

@@ -18,7 +18,7 @@ const Header = () => {
               className="flex items-center header-button font-extrabold text-xl m-1 gap-1"
             >
               <Image
-                src="/images/JJ_logo2.png"
+                src="/icons/JJ_logo2.png"
                 width={40}
                 height={40}
                 alt={`${APP_NAME} logo`}
