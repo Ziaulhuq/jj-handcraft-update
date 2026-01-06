@@ -43,7 +43,7 @@ const data = {
       isPublished: true,
     },
     {
-      title: "Most popular wallet puch for sale",
+      title: "Most popular wallet pouch for sale",
       buttonCaption: "shop now",
       image: "/images/banner2.png",
       url: "search?category=T-wallets",
