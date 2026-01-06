@@ -51,12 +51,12 @@ export function HomeCarousel({
                 <div className="absolute w-1/3 left-16 md:left-32 top-1/2 transform -translate-y-1/2">
                   <h2
                     className={cn(
-                      "text-xl md:text-6xl sm:text-3xl font-extrabold text-primary mb-2"
+                      "text-xl md:text-5xl sm:text-3xl font-extrabold text-primary mb-2"
                     )}
                   >
                     {item.title}
                   </h2>
-                  <Button className="hidden md:block">
+                  <Button className="mt-8 hidden md:block">
                     {item.buttonCaption}
                   </Button>
                 </div>
@@ -65,8 +65,8 @@ export function HomeCarousel({
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="left-0 md:left-12" />
-      <CarouselNext className="right-0 md:right-12" />
+      <CarouselPrevious className="left-0 md:left-12 bg-amber-100 text-black" />
+      <CarouselNext className="right-0 md:right-12 text-black bg-amber-100" />
     </Carousel>
   );
 }
