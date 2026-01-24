@@ -25,16 +25,16 @@ export function HomeCard({ cards }: { cards: CardItem[] }) {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex flex-col"
+                  className="flex flex-col p-4 gap-2 bg-gray-100"
                 >
                   <Image
                     src={item.image}
                     alt={item.name}
-                    className="aspect-square object-scale-down max-w-full h-auto mx-auto"
-                    height={120}
+                    className="w-full h-full"
+                    height={100}
                     width={120}
                   />
-                  <p className="text-center text-sm whitespace-nowrap overflow-hidden text-ellipsis">
+                  <p className="text-center text-sm font-semibold whitespace-nowrap overflow-hidden text-ellipsis mt-2">
                     {item.name}
                   </p>
                 </Link>
