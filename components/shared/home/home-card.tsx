@@ -25,7 +25,7 @@ export function HomeCard({ cards }: { cards: CardItem[] }) {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="flex flex-col p-4 gap-2 bg-gray-100"
+                  className="flex flex-col p-4 gap-2 bg-gray-50"
                 >
                   <Image
                     src={item.image}
@@ -44,7 +44,9 @@ export function HomeCard({ cards }: { cards: CardItem[] }) {
           {card.link && (
             <CardFooter>
               <Link href={card.link.href} className="mt-4 block">
-                {card.link.text}
+                <button className="bg-yellow-300 p-2 font-extrabold text-[13px] rounded-lg hover:bg-yellow-400">
+                  {card.link.text}
+                </button>
               </Link>
             </CardFooter>
           )}
