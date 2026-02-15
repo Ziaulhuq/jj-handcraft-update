@@ -71,7 +71,7 @@ export async function getRelatedProductsByCategory({
   page = 1,
 }: {
   category: string;
-  productId?: number;
+  productId: string;
   limit?: number;
   page: number;
 }) {
