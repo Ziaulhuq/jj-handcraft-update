@@ -66,7 +66,7 @@ const ProductPrice = ({
         </div>
       </div>
       <div className="text-muted-foreground text-xs py-2">
-        List price :{" "}
+        List price:{" "}
         <span className="line-through">{formatCurrency(listPrice)}</span>
       </div>
     </div>
