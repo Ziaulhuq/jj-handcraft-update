@@ -1,5 +1,6 @@
 import { Document, Model, model, models, Schema } from "mongoose";
 import { IProductInput } from "@/types";
+import { string } from "zod";
 
 export interface IProduct extends Document, IProductInput {
   id: string;
@@ -88,7 +89,7 @@ const productSchema = new Schema<IProduct>(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const Product =
