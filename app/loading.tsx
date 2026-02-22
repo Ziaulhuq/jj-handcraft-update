@@ -1,7 +1,7 @@
 import React from "react";
 import { LoaderCircle } from "lucide-react";
 
-const loading = () => {
+const Loading = () => {
   return (
     <div className="flex flex-col h-screen justify-center items-center">
       <div>
@@ -12,4 +12,4 @@ const loading = () => {
   );
 };
 
-export default loading;
+export default Loading;

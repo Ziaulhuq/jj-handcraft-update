@@ -55,18 +55,20 @@ export default async function ProductDetails(props: {
 
           <div className="flex w-full flex-col gap-2 md:p-5 col-span-2">
             <div className="flex flex-col gap-3">
-              <p className="p-medium-16 rounded-full bg-grey-500/10   text-grey-500">
+              <p className="p-medium-16 rounded-full bg-gray-300/10   text-gray-500 font-stretch-semi-condensed">
                 Brand {product.brand} {product.category}
               </p>
-              <h1 className="font-bold text-lg lg:text-xl">{product.name}</h1>
-              <div className="flex items-center gap-2">
+              <h1 className="font-bold text-black text-lg lg:text-xl">
+                {product.name}
+              </h1>
+              <div className="flex items-center gap-2 text-black">
                 <span>{product.avgRating.toFixed(1)}</span>
                 <Rating rating={product.avgRating} />
                 <span>{product.numReviews} ratings</span>
               </div>
 
               <Separator />
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center text-black">
                 <div className="flex gap-3">
                   <ProductPrice
                     price={product.price}
@@ -86,7 +88,7 @@ export default async function ProductDetails(props: {
             </div>
             <Separator className="my-2" />
             <div className="flex flex-col gap-2">
-              <p className="p-bold-20 text-grey-600">Description</p>
+              <p className="p-bold-20 text-gray-900">Description</p>
               <p className="p-medium-16 lg:p-regular-18">
                 {product.description}
               </p>
@@ -94,7 +96,7 @@ export default async function ProductDetails(props: {
           </div>
           <div>
             <Card>
-              <CardContent className="p-4 flex flex-col  gap-4">
+              <CardContent className="p-4 flex flex-col text-black gap-4">
                 <ProductPrice price={product.price} />
 
                 {product.countInStock > 0 && product.countInStock <= 3 && (
@@ -112,7 +114,7 @@ export default async function ProductDetails(props: {
           </div>
         </div>
       </section>
-      <section className="mt-10">
+      <section className="mt-10 text-black">
         <ProductSlider
           products={relatedProducts.data}
           title={`Best Sellers in ${product.category}`}
