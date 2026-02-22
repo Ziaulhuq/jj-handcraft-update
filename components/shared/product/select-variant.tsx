@@ -18,7 +18,7 @@ export default function SelectVariant({
     <>
       {product.colors.length > 0 && (
         <div className="space-x-2 space-y-2">
-          <div>Color:</div>
+          <div className="text-black">Color:</div>
           {product.colors.map((x: string) => (
             <Button
               asChild
@@ -48,8 +48,8 @@ export default function SelectVariant({
         </div>
       )}
       {product.sizes.length > 0 && (
-        <div className="mt-2 space-x-2 space-y-2">
-          <div>Size:</div>
+        <div className="mt-2 space-x-2 space-y-2 text-black">
+          <div className="text-black">Size:</div>
           {product.sizes.map((x: string) => (
             <Button
               asChild
