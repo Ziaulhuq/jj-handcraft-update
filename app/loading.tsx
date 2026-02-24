@@ -1,14 +1,13 @@
 import React from "react";
-import { LoaderCircle } from "lucide-react";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const Loading = () => {
   return (
-    <div className="flex flex-col h-screen justify-center items-center">
-      <div>
-        <LoaderCircle className="animate-spin w-16 h-16 text-black-800" />
-      </div>
-      <div>loading...</div>
-    </div>
+    <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <p>
+        <Skeleton count={5} className="w-full" />
+      </p>
+    </SkeletonTheme>
   );
 };
 

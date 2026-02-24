@@ -45,7 +45,7 @@ export function HomeCard({ cards }: { cards: CardItem[] }) {
           {card.link && (
             <CardFooter>
               <Link href={card.link.href} className="mt-4 block">
-                <button className="bg-yellow-300 p-2 font-extrabold text-[13px] rounded-lg hover:bg-yellow-400">
+                <button className="bg-yellow-300 p-2 font-extrabold text-[13px] rounded-full hover:bg-yellow-400">
                   {card.link.text}
                 </button>
               </Link>
