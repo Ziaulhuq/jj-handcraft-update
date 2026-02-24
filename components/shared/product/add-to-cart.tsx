@@ -35,7 +35,7 @@ export default function AddToCart({
       onClick={() => {
         try {
           addItem(item, 1);
-          toast(`${item.name} added to cart`, {
+          toast.success(`${item.name} added to cart`, {
             action: (
               <Button
                 onClick={() => {
