@@ -1,8 +1,47 @@
 "use server";
-
+import { z } from "zod";
 import { connectToDatabase } from "@/lib/db";
 import Product, { IProduct } from "@/lib/db/models/product.models";
 import { PAGE_SIZE } from "../constant";
+import { revalidatePath } from "next/cache";
+import { formatError } from "../utils";
+import { ProductInputSchema, ProductUpdateSchema } from "../validator";
+
+export async function updateProduct(data: z.infer<typeof ProductUpdateSchema>) {
+  try {
+    const product = ProductUpdateSchema.parse(data);
+    await connectToDatabase();
+    await Product.findByIdAndUpdate(product._id, product);
+    revalidatePath("/admin/products");
+    return {
+      success: true,
+      message: "Product updated successfully",
+    };
+  } catch (error) {
+    return { success: false, message: formatError(error) };
+  }
+}
+// DELETE
+export async function deleteProduct(id: string) {
+  try {
+    await connectToDatabase();
+    const res = await Product.findByIdAndDelete(id);
+    if (!res) throw new Error("Product not found");
+    revalidatePath("/admin/products");
+    return {
+      success: true,
+      message: "Product deleted successfully",
+    };
+  } catch (error) {
+    return { success: false, message: formatError(error) };
+  }
+}
+// GET ONE PRODUCT BY ID
+export async function getProductById(productId: string) {
+  await connectToDatabase();
+  const product = await Product.findById(productId);
+  return JSON.parse(JSON.stringify(product)) as IProduct;
+}
 
 // get products by categories
 export async function getAllCategories() {

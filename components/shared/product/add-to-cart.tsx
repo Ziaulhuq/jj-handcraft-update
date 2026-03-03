@@ -35,7 +35,7 @@ export default function AddToCart({
       onClick={() => {
         try {
           addItem(item, 1);
-          toast.success(`${item.name} added to cart`, {
+          toast(`${item.name} added to cart`, {
             action: (
               <Button
                 onClick={() => {
@@ -79,7 +79,7 @@ export default function AddToCart({
             const itemId = await addItem(item, quantity);
             router.push(`/cart/${itemId}`);
           } catch (error: any) {
-            toast.error(error.message);
+            toast(error.message);
           }
         }}
       >
@@ -92,7 +92,7 @@ export default function AddToCart({
             addItem(item, quantity);
             router.push(`/checkout`);
           } catch (error: any) {
-            toast.error(error.message);
+            toast(error.message);
           }
         }}
         className="w-full rounded-full "

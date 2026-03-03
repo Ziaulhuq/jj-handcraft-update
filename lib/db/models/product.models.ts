@@ -1,9 +1,8 @@
-import { Document, Model, model, models, Schema } from "mongoose";
+import { Document, Model, model, models, Schema, Types } from "mongoose";
 import { IProductInput } from "@/types";
-import { string } from "zod";
 
-export interface IProduct extends Document, IProductInput {
-  id: string;
+export interface IProduct extends Omit<Document, "_id">, IProductInput {
+  _id: string;
   createdAt: Date;
   updatedAt: Date;
 }

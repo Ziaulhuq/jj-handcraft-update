@@ -3,7 +3,6 @@ import {
   getProductBySlug,
   getRelatedProductsByCategory,
 } from "@/lib/action/product.action";
-
 import SelectVariant from "@/components/shared/product/select-variant";
 import ProductPrice from "@/components/shared/product/product-price";
 import ProductGallery from "@/components/shared/product/product-gallery";
@@ -45,13 +44,13 @@ export default async function ProductDetails(props: {
 
   const relatedProducts = await getRelatedProductsByCategory({
     category: product.category,
-    productId: product.id,
+    productId: product._id,
     page: Number(page || "1"),
   });
 
   return (
     <div>
-      <AddToBrowsingHistory id={product.id} category={product.category} />
+      <AddToBrowsingHistory id={product._id} category={product.category} />
       <section>
         <div className="grid grid-cols-1 md:grid-cols-5  ">
           <div className="col-span-2">
@@ -119,7 +118,7 @@ export default async function ProductDetails(props: {
                     <AddToCart
                       item={{
                         clientId: generateId(),
-                        product: product.id,
+                        product: product._id,
                         countInStock: product.countInStock,
                         name: product.name,
                         slug: product.slug,
