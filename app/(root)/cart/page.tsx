@@ -31,8 +31,20 @@ export default function CartPage() {
             <CardHeader className="text-3xl  ">
               Your Shopping Cart is empty
             </CardHeader>
-            <CardContent>
-              Continue shopping on <Link href="/">{APP_NAME}</Link>
+            <CardContent className="flex items-center">
+              Continue shopping on
+              <Link
+                href="/"
+                className="flex items-center header-button font-extrabold text-xl m-1 gap-1"
+              >
+                <Image
+                  src="/icons/JJ_logo2.png"
+                  width={40}
+                  height={40}
+                  alt={`${APP_NAME} logo`}
+                />
+                {APP_NAME}
+              </Link>
             </CardContent>
           </Card>
         ) : (

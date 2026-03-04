@@ -5,6 +5,7 @@ import Link from "next/link";
 import useIsMounted from "@/hooks/use-is-mounted";
 import { cn } from "@/lib/utils";
 import useCartStore from "@/hooks/use-cart-store";
+import useCartSidebar from "@/hooks/use-cart-sidebar";
 
 export default function CartButton() {
   const isMounted = useIsMounted();
@@ -12,23 +13,32 @@ export default function CartButton() {
     cart: { items },
   } = useCartStore();
   const cartItemsCount = items.reduce((a, c) => a + c.quantity, 0);
-  return (
-    <Link href="/cart" className="px-1 header-button">
-      <div className="flex items-end text-xs relative">
-        <ShoppingCartIcon className="h-8 w-8" />
+  const isCartSidebarOpen = useCartSidebar();
 
-        {isMounted && (
-          <span
-            className={cn(
-              `bg-black  px-1 rounded-full text-primary text-base font-bold absolute right-7.5 left-2.5 top-[-1] z-10`,
-              cartItemsCount >= 10 && "text-sm px-0 p-[-1]",
-            )}
-          >
-            {cartItemsCount}
-          </span>
-        )}
-        <span className="font-bold">Cart</span>
-      </div>
-    </Link>
+  return (
+    <>
+      <Link href="/cart" className="px-1 header-button">
+        <div className="flex items-end text-xs relative">
+          <ShoppingCartIcon className="h-8 w-8" />
+
+          {isMounted && (
+            <span
+              className={cn(
+                `bg-black  px-1 rounded-full text-primary text-base font-bold absolute right-7.5 left-2.5 top-[-1] z-10`,
+                cartItemsCount >= 10 && "text-sm px-0 p-[-1]",
+              )}
+            >
+              {cartItemsCount}
+            </span>
+          )}
+          <span className="font-bold">Cart</span>
+        </div>
+      </Link>
+      {isCartSidebarOpen && (
+        <div
+          className={`absolute top-5 -right-4 z-10 w-0 h-0 border-l-[7px] border-r-[7px] border-b-8 -rotate-90 border-transparent border-b-background`}
+        ></div>
+      )}
+    </>
   );
 }

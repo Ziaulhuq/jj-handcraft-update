@@ -14,6 +14,7 @@ import { toast } from "sonner";
 import { OrderItem } from "@/types";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function AddToCart({
   item,
@@ -35,14 +36,14 @@ export default function AddToCart({
       onClick={() => {
         try {
           addItem(item, 1);
-          toast(`${item.name} added to cart`, {
+          toast("added to cart", {
             action: (
               <Button
                 onClick={() => {
                   router.push("/cart");
                 }}
               >
-                Go to Cart
+                label: <Link href="/cart">Go To Cart</Link>,
               </Button>
             ),
           });
@@ -59,7 +60,7 @@ export default function AddToCart({
         value={quantity.toString()}
         onValueChange={(i) => setQuantity(Number(i))}
       >
-        <SelectTrigger className="">
+        <SelectTrigger className="w-full">
           <SelectValue>Quantity: {quantity}</SelectValue>
         </SelectTrigger>
         <SelectContent position="popper">
