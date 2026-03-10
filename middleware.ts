@@ -1,0 +1,10 @@
+import NextAuth from "next-auth";
+import authConfig from "./auth.config";
+
+export const { auth: middleware } = NextAuth(authConfig);
+export default middleware;
+
+export const config = {
+  // Skip all paths that should not be internationalized
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+};

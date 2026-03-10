@@ -186,7 +186,7 @@ export default function CartPage() {
                   </div>
                   <Button
                     onClick={() => router.push("/checkout")}
-                    className="rounded-full w-full"
+                    className="rounded-full w-full p-2"
                   >
                     Proceed to Checkout
                   </Button>
