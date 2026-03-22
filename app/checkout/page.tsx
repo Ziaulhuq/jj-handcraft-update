@@ -11,5 +11,5 @@ export default async function CheckoutPage() {
   if (!session?.user) {
     redirect("/sign-in?callbackUrl=/checkout");
   }
-  return <div>Checkout Form</div>;
+  return <div className="text-black">Checkout Form</div>;
 }

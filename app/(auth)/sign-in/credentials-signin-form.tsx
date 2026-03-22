@@ -76,7 +76,7 @@ export default function CredentialsSignInForm() {
                   <Input
                     placeholder="Enter email address"
                     {...field}
-                    className="text-gray-400"
+                    className="text-gray-300"
                   />
                 </FormControl>
                 <FormMessage />
@@ -95,7 +95,7 @@ export default function CredentialsSignInForm() {
                     type="password"
                     placeholder="Enter password"
                     {...field}
-                    className="text-gray-400"
+                    className="text-gray-300"
                   />
                 </FormControl>
                 <FormMessage />
